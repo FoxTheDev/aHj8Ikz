@@ -64,6 +64,11 @@ client.on("message", message => {
 
         let guild = message.guild;
         let ticket = args.join(" ").slice(0);
+      
+        if(args < 1) {
+          message.reply(", please put a problem!");
+          return;
+        }
 
         let tCreated = new Discord.RichEmbed()
         .setTitle("Ticket Created!")
