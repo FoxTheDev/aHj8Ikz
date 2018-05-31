@@ -86,8 +86,10 @@ client.on("message", message => {
 
         guild.createChannel('Ticket-' + (message.author.username), 'text')
           .then(channel => {
-            channel.setParent('450727870726275073');
-            channel.send(tMessage)
+          if(channel instanceof TextChannel){
+             channel.setParent("'4501727870726275073');
+             channel.send(tMessage);
+            }
           });
       }
 
