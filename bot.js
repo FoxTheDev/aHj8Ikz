@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const config = require("./bot-config.json");
 
 const fs = require("fs");
 
@@ -9,7 +10,7 @@ client.on("ready", () => {
   console.log("I have logged on!");
 
   console.log(`${client.user.username} has logged in!`);
-  client.user.setGame('One Foxy Boi')
+  client.user.setActivity(`One Fox Boi`, {type: "playing"});
   client.user.setStatus("dnd");
 
 });
@@ -18,14 +19,14 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", function(member) {
 
-  member.guild.channels.find("name", "member-log").send("\n 🦊 " + member.toString() + ", welcome to the **Foxy Support Server!**\n ``Confused?!?? Well we got you there! Go to `` <#449994317323436042> `` to learn more about me!`` ");
+  member.guild.channels.find("name", "member-log").send("\n ðŸ¦Š " + member.toString() + ", welcome to the **Foxy Support Server!**\n ``Confused?!?? Well we got you there! Go to `` <#449994317323436042> `` to learn more about me!`` ");
 
   member.addRole(member.guild.roles.find("name", "Foxy User"));
 });
 
 client.on("guildMemberRemove", function(member) {
 
-  member.guild.channels.find("name", "member-log").send("🦊 NOOOOO " + member.toString() + ", why did you have to leave!!!!!");
+  member.guild.channels.find("name", "member-log").send("ðŸ¦Š NOOOOO " + member.toString() + ", why did you have to leave!!!!!");
 
 });
 
@@ -40,7 +41,7 @@ client.on("message", message => {
 
 
   if(cmd === "fox") {
-    message.channel.send("🦊");
+    message.channel.send("ðŸ¦Š");
   }
   if(cmd === "apache") {
     message.channel.send("\`\`\`I sexually Identify as an Attack Helicopter. Ever since I was a boy I dreamed of soaring over the oilfields dropping hot sticky loads on disgusting foreigners. People say to me that a person being a helicopter is Impossible and I'm fucking retarded but I don't care, I'm beautiful. I'm having a plastic surgeon install rotary blades, 30 mm cannons and AMG-114 Hellfire missiles on my body. From now on I want you guys to call me \"Apache\" and respect my right to kill from above and kill needlessly. If you can't accept me you're a heliphobe and need to check your vehicle privilege. Thank you for being so understanding.\`\`\`");
@@ -64,11 +65,6 @@ client.on("message", message => {
 
         let guild = message.guild;
         let ticket = args.join(" ").slice(0);
-      
-        if(args < 1) {
-         message.channel.send("Please enter the reason for the ticket!"); 
-          return;
-        }
 
         let tCreated = new Discord.RichEmbed()
         .setTitle("Ticket Created!")
@@ -78,7 +74,7 @@ client.on("message", message => {
 
         let tMessage = new Discord.RichEmbed()
         .setTitle(message.author.username + "'s Ticket")
-        .addField("Problem", ticket + ".")
+        .addField("Problem", ticket)
         .addField("What to do?", "Please wait for a staff member to get back to you!")
         .setFooter("Requested by: " + message.author.username, message.author.displayAvatarURL);
 
@@ -86,8 +82,8 @@ client.on("message", message => {
 
         guild.createChannel('Ticket-' + (message.author.username), 'text')
           .then(channel => {
-             channel.setParent('4501727870726275073');
-             channel.send(tMessage);
+            channel.setParent('450727870726275073');
+            channel.send(tMessage)
           });
       }
 
