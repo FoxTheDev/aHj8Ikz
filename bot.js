@@ -9,7 +9,7 @@ client.on("ready", () => {
   console.log("I have logged on!");
 
   console.log(`${client.user.username} has logged in!`);
-  client.user.setActivity('One Foxy Boi', {type: "playing"});
+  client.user.setGame('One Foxy Boi')
   client.user.setStatus("dnd");
 
 });
