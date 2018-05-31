@@ -55,7 +55,7 @@ client.on("message", message => {
   for (var i = 0; i < badWords.length; i++) {
     if(message.content.includes(badWords[i])) {
       message.delete();
-      message.channel.send("No fucking cursing on this god damn server you peice of shit!");
+      message.channel.send("No cursing on this server please and thankyou!");
     }
   }
 
