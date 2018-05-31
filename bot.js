@@ -53,7 +53,7 @@ client.on("message", message => {
   }
 
   for (var i = 0; i < badWords.length; i++) {
-    if(message.content.includes(badWords[i])) {
+    if(message.content.includes(badWords[i].toUpperCase)) {
       message.delete();
       message.channel.send("No cursing on this server please and thankyou!");
     }
