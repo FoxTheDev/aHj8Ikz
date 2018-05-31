@@ -18,7 +18,7 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", function(member) {
 
-  member.guild.channels.find("name", "member-log").send("\n ðŸ¦Š " + member.toString() + ", welcome to the **Foxy Support Server!**\n ``Confused?!?? Well we got you there! Go to `` <#449994317323436042> `` to learn more about me!`` ");
+  member.guild.channels.find("name", "member-log").send("\n :fox: " + member.toString() + ", welcome to the **Foxy Support Server!**\n ``Confused?!?? Well we got you there! Go to `` <#449994317323436042> `` to learn more about me!`` ");
 
   member.addRole(member.guild.roles.find("name", "Foxy User"));
 });
