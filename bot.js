@@ -78,7 +78,7 @@ client.on("message", message => {
 
         let tMessage = new Discord.RichEmbed()
         .setTitle(message.author.username + "'s Ticket")
-        .addField("Problem", ticket)
+        .addField("Problem", ticket + ".")
         .addField("What to do?", "Please wait for a staff member to get back to you!")
         .setFooter("Requested by: " + message.author.username, message.author.displayAvatarURL);
 
