@@ -67,6 +67,7 @@ client.on("message", message => {
       
         if(args < 1) {
          message.channel.send("Please enter the reason for the ticket!"); 
+          return;
         }
 
         let tCreated = new Discord.RichEmbed()
