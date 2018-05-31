@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 const fs = require("fs");
 
-let badWords = ["fucking", "slut", "thot", "bitch", "fricky", "cunt", "frack", "fuck", "nigger", "spic"];
+let badWords = ["fucking", "slut", "thot", "bitch", "cunt", "fuck", "nigger", "spic"];
 
 client.on("ready", () => {
   console.log("I have logged on!");
