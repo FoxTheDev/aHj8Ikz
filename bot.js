@@ -25,7 +25,7 @@ client.on("guildMemberAdd", function(member) {
 
 client.on("guildMemberRemove", function(member) {
 
-  member.guild.channels.find("name", "member-log").send("\n :fox: " + member.toString() + ", left (What a Fag)");
+  member.guild.channels.find("name", "member-log").send("\n :fox: " + member.toString() + ", left (Join back Soon)");
 
 });
 
