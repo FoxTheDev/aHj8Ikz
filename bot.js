@@ -9,8 +9,8 @@ client.on("ready", () => {
   console.log("I have logged on!");
 
   console.log(`${client.user.username} has logged in!`);
-  client.user.setActivity(`;ticket {Problem}`, {type: "playing"});
-  client.user.setStatus("dnd");
+  client.user.setActivity(`;ticket [Problem]`, {type: "playing"});
+  client.user.setStatus("online");
 
 });
 
