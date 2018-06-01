@@ -42,11 +42,6 @@ client.on("message", message => {
   if(cmd === "fox") {
     message.channel.send("ðŸ¦Š");
   }
-  if(cmd === "fuckjava") {
-    for(var i=0; i < 1000; i++) {
-      message.channel.send("<@230158858667032587>") 
-    }
-  }
   if(cmd === "apache") {
     message.channel.send("\`\`\`I sexually Identify as an Attack Helicopter. Ever since I was a boy I dreamed of soaring over the oilfields dropping hot sticky loads on disgusting foreigners. People say to me that a person being a helicopter is Impossible and I'm fucking retarded but I don't care, I'm beautiful. I'm having a plastic surgeon install rotary blades, 30 mm cannons and AMG-114 Hellfire missiles on my body. From now on I want you guys to call me \"Apache\" and respect my right to kill from above and kill needlessly. If you can't accept me you're a heliphobe and need to check your vehicle privilege. Thank you for being so understanding.\`\`\`");
   }
@@ -58,10 +53,16 @@ client.on("message", message => {
   }
 
   for (var i = 0; i < badWords.length; i++) {
-    if(message.content.includes(badWords[i].toUpperCase)) {
+    if(message.content.includes(badWords[i])) {
       message.delete();
       message.channel.send("No cursing on this server please and thankyou!");
     }
+  }
+  
+  if(message.content.includes("java") || message.content.includes("Java")) {
+     for(var i=0; i < 5; i++) {
+      message.channel.send("<@230158858667032587>") 
+    } 
   }
 
 
