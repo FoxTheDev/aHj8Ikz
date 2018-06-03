@@ -58,13 +58,7 @@ client.on("message", message => {
       message.channel.send("No cursing on this server please and thankyou!");
     }
   }
-  
-  if(message.content.includes("java") || message.content.includes("Java")) {
-     for(var i=0; i < 5; i++) {
-      message.channel.send("<@230158858667032587>") 
-    } 
-  }
-
+ 
 
     if(cmd === `${prefix}ticket`) {
 
